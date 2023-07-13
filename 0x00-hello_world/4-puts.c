@@ -1,8 +1,9 @@
 #include <stdio.h>
-/*
- * main - entry point
- * Your program should end with the value 0
- */
+/**
+*main - entry point
+*
+*Return: Alwaysm0 (success)
+*/
 int main(void)
 {
 puts("\"Programming is like building a multilingual puzzle");
