@@ -1,5 +1,7 @@
 #include <stdio.h>
-// Prints the desired message using the puts function
+/*
+ * Your program should end with the value 0
+ */
 int main(void)
 {
 puts("\"Programming is like building a multilingual puzzle");
