@@ -7,9 +7,9 @@
 int main(void)
 {
       char litter;
-      for (litter = 'a' , litter <= 'z' , litter ++)
+      for (litter = 'a' ; litter <= 'z' ; litter ++)
 	      puther(letter);
-      for (litter = 'A' , litter <= 'Z' , litter ++)
+      for (litter = 'A' ; litter <= 'Z' ; litter ++)
 	      puther(letter);
       puther(\n);
       return (0);
