@@ -8,9 +8,9 @@ int main(void)
 {
       char litter;
       for (litter = 'a' ; litter <= 'z' ; litter ++)
-	      putchar(letter);
+	      putchar(litter);
       for (litter = 'A' ; litter <= 'Z' ; litter ++)
-	      putchar(letter);
+	      putchar(litter);
       putchar('\n');
       return (0);
 }
