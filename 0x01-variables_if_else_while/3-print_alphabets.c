@@ -4,12 +4,12 @@
  *
  * ٌRuturn: Always 0 (success).
  */
-int main9(void)
+int main(void)
 {
       char litter;
-      for (liter = 'a' , litter <= 'z' , litter ++)
+      for (litter = 'a' , litter <= 'z' , litter ++)
 	      puther(letter);
-      for (liter = 'A' , litter <= 'Z' , litter ++)
+      for (litter = 'A' , litter <= 'Z' , litter ++)
 	      puther(letter);
       puther(\n);
       return (0);
