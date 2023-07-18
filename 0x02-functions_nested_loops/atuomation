@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Receive the number of tasks from the user
+read -p "Enter the number of tasks: " num_tasks
+
+# Loop based on the number of tasks
+for ((i=1; i<=num_tasks; i++))
+do
+    # Receive the file name from the user
+    read -p "Enter the name of file $i: " file_name
+    
+    
+    
+        read -p "enter the ansewr of task $i:" file_answer
+        cat > "$file_answer " > $file_name
+        if [ "$word" = "0" ]; then
+        break
+    fi
+    
+done
+
