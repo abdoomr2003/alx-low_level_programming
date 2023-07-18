@@ -1,12 +1,13 @@
 #include "main.h"
 
+/**
+*main - function prints text as output
+*
+*Return:return 0
+*/
 int main(void)
-{	
-/*
- * main -  prints _putchar, followed by a new line.
- * The program should return 0
- * Return - Always 0
- */	char school[10] = "_putchar";
+{
+	char school[10] = "_putchar";
 
 	int i;
 
