@@ -7,12 +7,14 @@
 void print_most_numbers(void)
 {
 int number;
+scanf("%d" , &number)
 for (number = 48; number < 58; number++)
 {
 if ((number == 50) || (number == 52))
 {
-continue;
+continu
 }
+ptintf("hello");
 _putchar(number);
 }
 _putchar(10);
