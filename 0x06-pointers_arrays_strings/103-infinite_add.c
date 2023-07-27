@@ -1,59 +1,78 @@
-#include "main.h"
 #include <stdio.h>
+
 /**
- * infinite_add - add 2 strings.
- * @n1: string1.
- * @n2: string2.
- * @r: buffer
- * @size_r: buffer size
- * Return: String with all letters in ROT13 base.
+ * get_string_length - Calculate the length of a null-terminated string.
+ * @str: The input string.
+ *
+ * Return: The length of the string.
+ */
+int get_string_length(char *str)
+{
+    int length = 0;
+    while (str[length] != '\0')
+        length++;
+    return length;
+}
+
+/**
+ * add_digits - Add two digits along with a carry.
+ * @d1: The first digit.
+ * @d2: The second digit.
+ * @carry: The carry value from the previous addition.
+ * @result: A pointer to store the result of the addition (digit + carry).
+ *
+ * Return: The carry value for the next addition.
+ */
+int add_digits(char d1, char d2, int carry, char *result)
+{
+    int sum = carry + (d1 - '0') + (d2 - '0');
+    *result = (sum % 10) + '0';
+    return sum / 10;
+}
+
+/**
+ * infinite_add - Add two numbers and store the result in a buffer.
+ * @n1: The first number as a string.
+ * @n2: The second number as a string.
+ * @r: The buffer to store the result.
+ * @size_r: The size of the buffer.
+ *
+ * Return: A pointer to the result (in the buffer @r), or 0 if the result
+ *         cannot be stored in the buffer.
  */
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int a_len = 0, b_len = 0, carry = 0, a, b, sum, biggest;
+    int len1 = get_string_length(n1);
+    int len2 = get_string_length(n2);
+    int carry = 0;
+    int sum;
+    int i = len1 - 1;
+    int j = len2 - 1;
+    int result_index = size_r - 1;
 
-	while (n1[a_len] != '\0')
-		a_len++;
-	while (n2[b_len] != '\0')
-		b_len++;
-	if (a_len > b_len)
-		biggest = a_len;
-	else
-		biggest = b_len;
-	if ((biggest + 1) >= size_r)
-		return (0);
-	r[biggest + 1] = '\0';
+    // Check if the result can be stored in the buffer
+    if (len1 >= size_r || len2 >= size_r)
+        return 0;
 
-	while (biggest >= 0)
-	{
-		a = (n1[a_len - 1] - '0');
-		b = (n1[b_len - 1] - '0');
-		if (a_len > 0 && b_len > 0)
-			sum = a + b + carry;
-		else if (a_len < 0 && b_len > 0)
-			sum = b + carry;
-		else if (a_len > 0 && b_len < 0)
-			sum = a + carry;
-		else
-			sum = carry;
+    // Perform the addition and store the result in the buffer
+    while (i >= 0 || j >= 0 || carry)
+    {
+        if (result_index - 1 < 0) 
+            return 0;
 
-		if (sum > 9)
-		{
-			carry = sum / 10;
-			sum = (sum % 10) + '0';
-		}
-		else
-		{
-			carry = 0;
-			sum = sum + '0';
-		}
-		r[biggest] = sum;
-		a_len--;
-		b_len--;
-		biggest--;
-	}
-	if (*(r) != 0)
-		return (r);
-	else
-		return (r + 1);
+        sum = carry;
+        if (i >= 0)
+            sum += n1[i] - '0';
+        if (j >= 0)
+            sum += n2[j] - '0';
+
+        carry = add_digits('0', '0', sum, &r[result_index - 1]);
+
+        i--;
+        j--;
+        result_index--;
+    }
+
+    return r + result_index;
 }
+
