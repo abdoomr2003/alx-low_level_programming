@@ -10,7 +10,7 @@
 char *_strdup(char *str)
 {
 	unsigned int i, l = 0;
-	char *string = malloc(l * sizeof(char));
+	char *string = malloc((l + 1) * sizeof(char));
 
 	while (str[l] != '\0')
 		l++;
