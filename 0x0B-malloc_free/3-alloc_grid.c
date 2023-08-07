@@ -8,18 +8,18 @@
  *
  * Return: pointer to the newly allocated 2D array (grid)
  */
-char **str_concat(char *width, char *hight)
+char **str_concat(char *width, char *height)
 {
 	int h,i,w;
 
 	if (width <= 0 || height <= 0)
 		 return NULL;
-	int **grid = malloc(height * sizeof(int *));
+	char **grid = malloc(height * sizeof(char *));
 	if (grid == NULL)
 		return NULL;
 	for (h = 0; h < height; h++)
 	{
-		grid[h] = malloc(width * sizeof(int));
+		grid[h] = malloc(width * sizeof(char));
 		if (grid[h] == NULL)
 		{
 			for (i = 0; i < h; i++)
