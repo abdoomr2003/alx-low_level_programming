@@ -1,6 +1,7 @@
 #include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 /**
  * _strdup - create a duplicate of a string
  * @str: the string to be duplicated
@@ -19,7 +20,7 @@ char *_strdup(char *str)
 		return (NULL);
 	if (string != NULL)
 		for (i = 0 ; i <= l; i++)
-			string[l] = str[i];
+			string[l] = strdup(str[i]);
 	return (string);
 
 }
