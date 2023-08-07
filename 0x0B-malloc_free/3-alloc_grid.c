@@ -10,13 +10,15 @@
  */
 int **str_concat(int *width, int *height)
 {
-	int h,i,w;
+	int i;
+	int **grid = malloc(height * sizeof(int *));
 
 	if (width <= 0 || height <= 0)
-		 return NULL;
-	int **grid = malloc(height * sizeof(int *));
+		return (NULL);
 	if (grid == NULL)
-		return NULL;
+		return (NULL);
+	int h, w;
+
 	for (h = 0; h < height; h++)
 	{
 		grid[h] = malloc(width * sizeof(int));
@@ -25,10 +27,10 @@ int **str_concat(int *width, int *height)
 			for (i = 0; i < h; i++)
 				free(grid[i]);
 			free(grid);
-			return NULL;
+			return (NULL);
 		}
 		for (w = 0; w < width; w++)
 			grid[h][w] = 0;
 	}
-	return grid;
+	return (grid);
 }
