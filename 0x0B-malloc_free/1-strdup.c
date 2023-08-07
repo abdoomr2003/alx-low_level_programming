@@ -10,17 +10,16 @@
 char *_strdup(char *str)
 {
 	unsigned int i, l;
-	char *string[];
+	char *string = malloc(l * sizeof(char));
 
 	while (str[l] != '\0')
 		l++;
-	string = malloc(l * sizeof(char))
 
 	if (str == 0 || string == NULL)
 		return (NULL);
 	if (string != NULL)
 		for (i = 0 ; i <= l; i++)
-			string[i] = str[i];
+			string[l] = str[i];
 	return (string);
 
 }
