@@ -1,5 +1,5 @@
 #include "main.h"
-
+#include <stddef.h>
 /*
  * create_array - creates an array of chars, and initializes it with a specific char.
  * @buffer: the address of memory to print
@@ -9,9 +9,9 @@
  */
 char *create_array(unsigned int size, char c)
 {
-	int* s = malloc(size_t size);
+	int* s = malloc(size);
 	if(size==0)
-		return(NULL);
+		return("NULL");
 	else
 		do
 		{
