@@ -9,7 +9,7 @@ int main(void)
 {
 	int num;
 
-	num = 0
+	num = 0;
 	do {
 		putchar((num % 10) + '0');
 		if (num == 9)
@@ -19,6 +19,7 @@ int main(void)
 		}
 		putchar(',');
 		putchar(' ');
+		num++;
 	} while (num < 10);
 
 	putchar('\n');
