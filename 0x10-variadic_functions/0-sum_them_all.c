@@ -3,12 +3,11 @@
 #include <stdarg.h>
 
 /**
- * sum_them_all - returns the sum of all its parameters.
- * @n: number of argument
- *
- * Return: sum
+ * sum_them_all - check the code for Holberton School students.
+ * @n: number of arguments
+ * Return: Always 0.
  */
-int int sum_them_all(const unsigned int n, ...)
+int sum_them_all(const unsigned int n, ...)
 {
 	va_list valist;
 	int sum = 0;
