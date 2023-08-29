@@ -4,25 +4,22 @@
 *
 *Return: returns nothing
 */
-void times_table(void)
+void main(void)
 {
-int digit, mult, result;
-for (digit = 0; digit <= 9; digit++)
-{
-_putchar('0');
+	int num;
 
-for (mult = 1; mult <= 9; mult++)
-{
-_putchar(',');
-_putchar(' ');
-result = digit * mult;
-if (result <= 9)
-_putchar(' ');
-else
-_putchar((result / 10) + '0');
+	num = 0;
+	do {
+		_putchar(num + '0');
+		if (num == 9)
+		{
+			num++;
+			continue;
+		}
 
-_putchar((result % 10) + '0');
-}
-_putchar('\n');
-}
+		_putchar(',');
+		_putchar(' ');
+		num++;
+	} while (num < 10);
+	_putchar('\n');
 }

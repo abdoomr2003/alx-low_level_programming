@@ -1,34 +1,39 @@
-#include <stdio.h>
+#include <unistd.h>
+void print_alphabet(void);
+int _putchar(char c);
 
-/**
- * main - Prints all possible combinations of two two-digit numbers,
- *        ranging from 0-99, separated by a comma followed by a space.
- *
- * Return: Always 0.
- */
 int main(void)
 {
-	int num1, num2;
+    void print_alphabet(void)
+    {
+        int letter;
 
-	for (num1 = 0; num1 <= 98; num1++)
-	{
-		for (num2 = num1 + 1; num2 <= 99; num2++)
-		{
-			putchar((num1 / 10) + '0');
-			putchar((num1 % 10) + '0');
-			putchar(' ');
-			putchar((num2 / 10) + '0');
-			putchar((num2 % 10) + '0');
+        for (letter = 'a'; letter <= 'z'; letter++)
+        {
+                int _putchar(char letter);
+                {
+                    return (write(1, &c, 1));
+                }
+        }
+                int _putchar(char 10);
+                {
+                    return (write(1, &c, 1));
+                }
+    }
+    return (0);
+}
+void print_alphabet(void)
+{
+        int letter;
 
-			if (num1 == 98 && num2 == 99)
-				continue;
+        for (letter = 'a'; letter <= 'z'; letter++)
+        {
+                _putchar (letter);
+        }
+        _putchar (10);
+}
 
-			putchar(',');
-			putchar(' ');
-		}
-	}
-
-	putchar('\n');
-
-	return (0);
+int _putchar(char c)
+{
+        return (write(1, &c, 1));
 }
