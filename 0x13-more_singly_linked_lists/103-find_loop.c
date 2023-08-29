@@ -16,7 +16,7 @@ listint_t *find_listint_loop(listint_t *head)
 	/* starts them both at head, move turtle 1 node and hare 2 nodes */
 	turtle = hare = head;
 
-	while (turtle != NULL && hare != NULL)
+	while (turtle != NULL && hare != NULL && hare->next != NULL)
 	{
 		turtle = turtle->next;
 		hare = hare->next->next;
@@ -31,6 +31,7 @@ listint_t *find_listint_loop(listint_t *head)
 				turtle = turtle->next;
 				hare = hare->next;
 			}
+			return (urtle)
 		}
 	}
 	return (NULL);
