@@ -3,7 +3,7 @@
 /**
  * binary_to_uint - convert a binary to UI
  * @b: pointing to a string of 0 and 1 chars
- * 
+ *
  * Return: UI if b ! 0 || 1 NULL
  */
 unsigned int binary_to_uint(const char *b)
@@ -17,7 +17,7 @@ unsigned int binary_to_uint(const char *b)
 	{
 		if (b[i] == '0' || b[i] == '1')
 			convert = convert * 2 + (b[i] - '0');
-		else 
+		else
 			return (0);
 	}
 	return (convert);
