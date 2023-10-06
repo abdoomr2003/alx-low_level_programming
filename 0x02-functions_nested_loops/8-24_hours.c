@@ -1,4 +1,4 @@
-#include "main.h"
+#include <stdio.h>
 /**
 *jack_bauer - prints each minute of the day
 *
@@ -11,13 +11,24 @@ for (hour = 0; hour <= 23; hour++)
 {
 for (min = 0; min <= 59; min++)
 {
-_putchar((hour / 10) + '0');
-_putchar((hour % 10) + '0');
-_putchar(':');
-_putchar((min / 10) + '0');
-_putchar((min % 10) + '0');
-_putchar(10);
+putchar((hour / 10) + '0');
+putchar((hour % 10) + '0');
+putchar(':');
+putchar((min / 10) + '0');
+putchar((min % 10) + '0');
+putchar(10);
 }
 }
 
+}
+
+/**
+ * main - check the code for Holberton School students.
+ *
+ * Return: Always 0.
+ */
+int main(void)
+{
+	jack_bauer();
+	return (0);
 }
