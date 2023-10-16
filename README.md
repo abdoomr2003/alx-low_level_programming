@@ -1,1 +1,1 @@
-this is 0x00. C - Hello, World project  new
+this is 0x00. C - Hello, World project
